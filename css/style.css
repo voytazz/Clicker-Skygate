@@ -1,0 +1,58 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display:flex;
+}
+
+.cookieCounter {
+    width:200px;
+    height:200px;
+    font-size:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursorBonus {
+    width:500px;
+    height:100px;
+    background-color:blue;
+    font-size:50px;
+    color:white;
+}
+
+.grandmaBonus {
+    width:500px;
+    height:100px;
+    background-color:red;
+    font-size:50px;
+    color:white;
+}
+
+.farmBonus {
+    width:500px;
+    height:100px;
+    background-color:green;
+    font-size:50px;
+    color:white;
+}
+
+.bakeryBonus {
+    width:500px;
+    height:100px;
+    background-color:orange;
+    font-size:50px;
+    color:white;
+}
+
+.mineBonus {
+    width:500px;
+    height:100px;
+    background-color:purple;
+    font-size:50px;
+    color:white;
+}
