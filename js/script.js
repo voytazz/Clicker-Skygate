@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cookie.addEventListener("click", function () {
         counter++;
         cookieCounter.innerHTML = counter;
+        
     })
 
     function Count(bonus) {
@@ -23,56 +24,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     cursorBonus.addEventListener("click", function () {
-
         if (counter >= 20) {
             counter -= 20;
-
             setInterval(function () {
-
                 var kursor = new Count(1);
                 kursor.bonusCount();
-            }, 1000);
+            }, 5000);
 
         } else {}
 
     })
 
     grandmaBonus.addEventListener("click", function () {
-        if (counter >= 30) {
-            counter -= 30;
+        if (counter >= 100) {
+            counter -= 100; 
             setInterval(function () {
                 var grandma = new Count(5);
                 grandma.bonusCount();
-            }, 1000);
+            }, 4000);
         }
 
     })
 
     farmBonus.addEventListener("click", function () {
-        if (counter >= 50) {
-            counter -= 50;
+        if (counter >= 500) {
+            counter -= 500;
             setInterval(function () {
                 var farm = new Count(10);
                 farm.bonusCount();
-            }, 1000);
+            }, 3000);
         }
 
     })
 
     bakeryBonus.addEventListener("click", function () {
-        if (counter >= 100) {
-            counter -= 100;
+        if (counter >= 2000) {
+            counter -= 2000;
             setInterval(function () {
                 var bakery = new Count(15);
                 bakery.bonusCount();
-            }, 1000);
+            }, 2000);
         }
 
     })
 
     mineBonus.addEventListener("click", function () {
-        if (counter >= 500) {
-            counter -= 500;
+        if (counter >= 100000) {
+            counter -= 100000;
             setInterval(function () {
                 var mine = new Count(20);
                 mine.bonusCount();
