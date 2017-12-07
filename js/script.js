@@ -12,11 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var bakeryCounter = document.querySelector(".bakeryCounter");
     var mineBonus = document.querySelector(".mineBonus");
     var mineCounter = document.querySelector(".mineCounter");
+    var cookiesOnSecond = document.querySelector(".cookiesOnSecond");
     var counter = 0;
+    var bonusCookiesCounter = 0;
 
     cookie.addEventListener("click", function () {
         counter++;
         cookieCounter.innerHTML = counter;
+        
+        cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
         
     })
 
@@ -29,28 +33,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var cursorCost = 20;
     cursorBonus.addEventListener("click", function () {
-        
+
         if (counter >= cursorCost) {
             counter -= cursorCost;
-            cursorCost+=5;
+            cursorCost += 5;
+            bonusCookiesCounter += 0.2;
             cursorCounter.innerHTML = cursorCost;
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            var kursor = new Count(1);
+                kursor.bonusCount();
             setInterval(function () {
                 var kursor = new Count(1);
                 kursor.bonusCount();
-                
+
             }, 5000);
 
         } 
-       
+
 
     })
-    
+
     var grandmaCost = 100;
     grandmaBonus.addEventListener("click", function () {
         if (counter >= grandmaCost) {
             counter -= grandmaCost;
-            grandmaCost+=10;
+            grandmaCost += 10;
+            bonusCookiesCounter += 0.8;
             grandmaCounter.innerHTML = grandmaCost;
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            var grandma = new Count(5);
+                grandma.bonusCount();
             setInterval(function () {
                 var grandma = new Count(5);
                 grandma.bonusCount();
@@ -63,8 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
     farmBonus.addEventListener("click", function () {
         if (counter >= farmCost) {
             counter -= farmCost;
-            farmCost+=50;
+            farmCost += 50;
+            bonusCookiesCounter += 3.3;
             farmCounter.innerHTML = farmCost;
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            var farm = new Count(10);
+                farm.bonusCount();
             setInterval(function () {
                 var farm = new Count(10);
                 farm.bonusCount();
@@ -72,13 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
-    
+
     var bakeryCost = 2000;
     bakeryBonus.addEventListener("click", function () {
         if (counter >= bakeryCost) {
             counter -= bakeryCost;
-            bakeryCost+=1000;
+            bakeryCost += 1000;
+            bonusCookiesCounter += 7.5;
             bakeryCounter.innerHTML = bakeryCost;
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            var bakery = new Count(15);
+                bakery.bonusCount();
             setInterval(function () {
                 var bakery = new Count(15);
                 bakery.bonusCount();
@@ -86,13 +106,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
-    
+
     var mineCost = 100000;
     mineBonus.addEventListener("click", function () {
         if (counter >= mineCost) {
             counter -= mineCost;
-            mineCost+=1000;
+            mineCost += 1000;
+            bonusCookiesCounter += 20;
             mineCounter.innerHTML = mineCost;
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            var mine = new Count(20);
+                mine.bonusCount();
             setInterval(function () {
                 var mine = new Count(20);
                 mine.bonusCount();
