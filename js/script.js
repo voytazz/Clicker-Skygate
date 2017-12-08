@@ -19,10 +19,26 @@ document.addEventListener("DOMContentLoaded", function () {
     cookie.addEventListener("click", function () {
         counter++;
         cookieCounter.innerHTML = counter;
-        
         cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
-        
+
     })
+
+    setInterval(function () {
+        if (counter >= cursorCost) {
+            cursorBonus.style.backgroundColor = "#1D2135";
+        } else {
+            cursorBonus.style.backgroundColor = "rgba(109, 130, 151, 0.3)";
+        }
+
+        if (counter >= grandmaCost) {
+            grandmaBonus.style.backgroundColor = "#8BA9E1";
+        } else {
+            grandmaBonus.style.backgroundColor = "lightslategray";
+        }
+
+
+    }, 10);
+
 
     function Count(bonus) {
         this.bonus = bonus;
@@ -31,38 +47,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     var cursorCost = 20;
+    var ownedCursor = 0;
     cursorBonus.addEventListener("click", function () {
 
         if (counter >= cursorCost) {
+
             counter -= cursorCost;
             cursorCost += 5;
             bonusCookiesCounter += 0.2;
             cursorCounter.innerHTML = cursorCost;
-            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
+            ownedCursor+=1;
             var kursor = new Count(1);
-                kursor.bonusCount();
+            kursor.bonusCount();
             setInterval(function () {
                 var kursor = new Count(1);
                 kursor.bonusCount();
 
             }, 5000);
 
-        } 
-
-
+        }
     })
-
+    
+    
     var grandmaCost = 100;
+    var ownedGrandma = 0;
     grandmaBonus.addEventListener("click", function () {
         if (counter >= grandmaCost) {
             counter -= grandmaCost;
             grandmaCost += 10;
-            bonusCookiesCounter += 0.8;
+            bonusCookiesCounter += 1.25;
             grandmaCounter.innerHTML = grandmaCost;
-            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
+            ownedGrandma+=1;
             var grandma = new Count(5);
-                grandma.bonusCount();
+            grandma.bonusCount();
             setInterval(function () {
                 var grandma = new Count(5);
                 grandma.bonusCount();
@@ -76,11 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter >= farmCost) {
             counter -= farmCost;
             farmCost += 50;
-            bonusCookiesCounter += 3.3;
+            bonusCookiesCounter += 3.33;
             farmCounter.innerHTML = farmCost;
-            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             var farm = new Count(10);
-                farm.bonusCount();
+            farm.bonusCount();
             setInterval(function () {
                 var farm = new Count(10);
                 farm.bonusCount();
@@ -96,9 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
             bakeryCost += 1000;
             bonusCookiesCounter += 7.5;
             bakeryCounter.innerHTML = bakeryCost;
-            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             var bakery = new Count(15);
-                bakery.bonusCount();
+            bakery.bonusCount();
             setInterval(function () {
                 var bakery = new Count(15);
                 bakery.bonusCount();
@@ -114,9 +135,9 @@ document.addEventListener("DOMContentLoaded", function () {
             mineCost += 1000;
             bonusCookiesCounter += 20;
             mineCounter.innerHTML = mineCost;
-            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(1);
+            cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             var mine = new Count(20);
-                mine.bonusCount();
+            mine.bonusCount();
             setInterval(function () {
                 var mine = new Count(20);
                 mine.bonusCount();
