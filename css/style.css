@@ -19,6 +19,16 @@
     height:60vh;
 }
 
+.firstSection h2 {
+    font-size:40px;
+    color:white;
+}
+
+.miniCookie {
+    width:25px;
+    height:25px;
+    margin: 0 10px;
+}
 .secondSection {
     width:30%;
     height:60vh;
@@ -29,63 +39,85 @@
 
 .cookieImg {
     width:100%;
+    margin-top:10%;
     cursor: pointer;
     
 }
 
 .thirdSection {
-    width:30%;
+    width:25%;
     height:60vh;
 }
 
 .cookieCounter {
     width:100%;
-    height:20%;
+    height:100px;
     font-size:70px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     color:white;
 }
 
 .cursorBonus {
-    width:500px;
+    width:100%;
+    height:100px;
+    font-size:40px;
+    color:white;
+    cursor: pointer; 
+}
+
+.thirdFlex {
+    display:flex;
+    
+}
+
+.bonusCounterNumber {
+    width:50%;
+     height:100px;
+    font-size:40px;
+    color:white;
+    cursor: pointer; 
+    
+    
+}
+
+.grandmaBonus {
+    width:100%;
     height:100px;
     
     font-size:50px;
     color:white;
     cursor: pointer;
-    
-}
-
-.grandmaBonus {
-    width:500px;
-    height:100px;
-    background-color:lightslategray;
-    font-size:50px;
-    color:white;
 }
 
 .farmBonus {
-    width:500px;
+    width:100%;
     height:100px;
-    background-color:lightslategray;
+    
     font-size:50px;
     color:white;
+    cursor: pointer;
 }
 
 .bakeryBonus {
-    width:500px;
+    width:100%;
     height:100px;
-    background-color:lightslategray;
+    
     font-size:50px;
     color:white;
+    cursor: pointer;
 }
 
 .mineBonus {
-    width:500px;
+    width:100%;
     height:100px;
-    background-color:lightslategray;
+    
     font-size:50px;
     color:white;
+    cursor: pointer;
+}
+
+.bonusText {
+    font-size: 14px;
 }
