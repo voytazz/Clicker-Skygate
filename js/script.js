@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
     var cookie = document.querySelector(".cookieImg");
     var cookieCounter = document.querySelector(".cookieCounter");
     var cursorBonus = document.querySelector(".cursorBonus");
@@ -26,6 +27,24 @@ document.addEventListener("DOMContentLoaded", function () {
         counter++;
         cookieCounter.innerHTML = counter;
         cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
+
+    setInterval(function () {
+
+        if (window.localStorage) {
+            localStorage.setItem("Counter", counter);
+            localStorage.cursorCost = cursorCost;
+            localStorage.grandmaCost = grandmaCost;
+            localStorage.farmCost = farmCost;
+            localStorage.bakeryCost = bakeryCost;
+            localStorage.mineCost = mineCost;
+
+        } else {}
+    }, 1000);
+
+
+
+
+
 
     })
 
@@ -91,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 var kursor = new Count(1);
                 kursor.bonusCount();
 
-
             }, 5000);
 
         }
@@ -109,9 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedGrandma += 1;
             numberOfGrandma.innerHTML = ownedGrandma;
+            
             setInterval(function () {
                 var grandma = new Count(1);
                 grandma.bonusCount();
+
             }, 1000);
         }
 
@@ -131,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setInterval(function () {
                 var farm = new Count(3);
                 farm.bonusCount();
+
             }, 1000);
         }
 
@@ -150,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setInterval(function () {
                 var bakery = new Count(6);
                 bakery.bonusCount();
+
             }, 1000);
         }
 
@@ -170,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setInterval(function () {
                 var mine = new Count(15);
                 mine.bonusCount();
+
             }, 1000);
         }
 
