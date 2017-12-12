@@ -67,16 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.localStorage) {
             localStorage.setItem("Counter", counter);
             localStorage.setItem("cursorCost", cursorCost);
-            localStorage.grandmaCost = grandmaCost;
-            localStorage.farmCost = farmCost;
-            localStorage.bakeryCost = bakeryCost;
-            localStorage.mineCost = mineCost;
-            localStorage.ownedCursor = ownedCursor;
-            localStorage.ownedGrandma = ownedGrandma;
-            localStorage.ownedFarm = ownedFarm;
-            localStorage.ownedBakery = ownedBakery
-            localStorage.ownedMine = ownedMine;
-            localStorage.bonusCookiesCounter = bonusCookiesCounter.toFixed(2);
+            localStorage.setItem("grandmaCost", grandmaCost);
+            localStorage.setItem("farmCost", farmCost);
+            localStorage.setItem("bakeryCost", bakeryCost);
+            localStorage.setItem("mineCost", mineCost);
+            localStorage.setItem("ownedCursor", ownedCursor);
+            localStorage.setItem("ownedGrandma", ownedGrandma);
+            localStorage.setItem("ownedFarm", ownedFarm);
+            localStorage.setItem("ownedBakery", ownedBakery);
+            localStorage.setItem("ownedMine", ownedMine);
+            localStorage.setItem("bonusCookiesCounter", bonusCookiesCounter.toFixed(2));
 
         } else {}
     }, 100);
