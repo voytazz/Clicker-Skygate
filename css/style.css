@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -19,11 +19,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .firstSection {
@@ -60,8 +60,8 @@
     display: flex;
     margin: 20px 0;
     -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
 }
 
 .ownedStyle {
@@ -78,11 +78,11 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .cookieImg {
@@ -104,14 +104,14 @@
 
 .cookieCounter {
     width: 100%;
-    height: 100px;
+    height: 30%;
     font-size: 70px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     color: white;
 }
 
@@ -157,11 +157,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .myGithub {
@@ -172,4 +172,36 @@
 
 .myGithub img {
     height: 100%;
+}
+
+@media only screen and (max-width:1366px) {
+    .firstSection h2 {
+        font-size: 25px;
+    }
+    .ownedStyle {
+        font-size: 25px;
+    }
+    .newGame {
+        font-size: 25px;
+    }
+    .bonusSection {
+        font-size: 30px;
+    }
+
+}
+
+@media only screen and (max-width:1600px) {
+    .firstSection h2 {
+        font-size: 30px;
+    }
+    .ownedStyle {
+        font-size: 30px;
+    }
+    .newGame {
+        font-size: 25px;
+    }
+    .bonusSection {
+        font-size: 30px;
+    }
+
 }
