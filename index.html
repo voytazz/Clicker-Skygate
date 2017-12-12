@@ -6,70 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Clicker</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="mainBackground">
-        <div class="firstSection">
-            <h2>Dodatkowa produkcja</h2>
+    <header class="mainBackground">
+        <div class="mainFlex">
+            <div class="firstSection">
+                <h2>Dodatkowa produkcja</h2>
 
-            <div class="bonusCounter"><img class='miniCookie' src="img/cookie.png" />
-                <div class="cookiesOnSecond">0</div>
-                <p>ciastek na sekundę</p>
-            </div>
-            <h2>Posiadane bonusy</h2>
-            <div class="bonusFlex"><img src="img/cursor.png" />
-                <div class="ownedCursor">0</div>
+                <div class="bonusCounter"><img class='miniCookie' src="img/cookie.png" />
+                    <div class="cookiesOnSecond"></div>
+                    <p>ciastek na sekundę</p>
+                </div>
+                <h2>Posiadane bonusy</h2>
+                <div class="bonusFlex"><img src="img/cursor.png" />
+                    <div class="ownedCursor ownedStyle"></div>
+                </div>
+
+                <div class="bonusFlex"> <img src="img/grandmother.png" />
+                    <div class="ownedGrandma ownedStyle"></div>
+                </div>
+                <div class="bonusFlex"> <img src="img/farm.png" />
+                    <div class="ownedFarm ownedStyle"></div>
+                </div>
+                <div class="bonusFlex"> <img src="img/bakery.png" />
+                    <div class="ownedBakery ownedStyle"></div>
+                </div>
+                <div class="bonusFlex"> <img src="img/mine.png" />
+                    <div class="ownedMine ownedStyle"></div>
+                </div>
             </div>
 
-            <div class="bonusFlex"> <img src="img/grandmother.png" />
-                <div class="ownedGrandma">0</div>
-            </div>
-            <div class="bonusFlex"> <img src="img/farm.png" />
-                <div class="ownedFarm">0</div>
-            </div>
-            <div class="bonusFlex"> <img src="img/bakery.png" />
-                <div class="ownedBakery">0</div>
-            </div>
-            <div class="bonusFlex"> <img src="img/mine.png" />
-                <div class="ownedMine">0</div>
+            <div class="secondSection">
+
+                <div class="cookieCounter"></div>
+                <div class="cookie"><img class="cookieImg" src="img/cookie.png" /></div>
+                <div class="newGame">Nowa gra</div>
+
             </div>
 
-
+            <div class="thirdSection">
+                <div class="cursorBonus bonusSection">Kursor - <span class="cursorCounter"></span><img class='miniCookie' src="img/cookie.png" />
+                    <p class="bonusText">( + 1 ciastek na sekundę)</p>
+                </div>
+                <div class="grandmaBonus bonusSection">Babcia - <span class="grandmaCounter"></span><img class='miniCookie' src="img/cookie.png" />
+                    <p class="bonusText">( + 2 ciastek na sekundę)</p>
+                </div>
+                <div class="farmBonus bonusSection">Farma - <span class="farmCounter"></span><img class='miniCookie' src="img/cookie.png" />
+                    <p class="bonusText">( + 3 ciastek na sekundę)</p>
+                </div>
+                <div class="bakeryBonus bonusSection">Piekarnia - <span class="bakeryCounter"></span><img class='miniCookie' src="img/cookie.png" />
+                    <p class="bonusText">( + 6 ciastek na sekundę)</p>
+                </div>
+                <div class="mineBonus bonusSection">Kopalnia - <span class="mineCounter"></span><img class='miniCookie' src="img/cookie.png" />
+                    <p class="bonusText">( + 15 ciastek na sekundę)</p>
+                </div>
+            </div>
 
         </div>
 
-        <div class="secondSection">
-
-            <div class="cookieCounter">0</div>
-            <div class="cookie"><img class="cookieImg" src="img/cookie.png" /></div>
-        </div>
-
-        <div class="thirdSection">
-            <div class="cursorBonus">Kursor - <span class="cursorCounter">20</span><img class='miniCookie' src="img/cookie.png" />
-                <p class="bonusText">( + 0.2 ciastek na sekundę)</p>
-            </div>
-            <div class="grandmaBonus">Babcia - <span class="grandmaCounter">100</span><img class='miniCookie' src="img/cookie.png" />
-                <p class="bonusText">( + 1 ciastek na sekundę)</p>
-            </div>
-            <div class="farmBonus">Farma - <span class="farmCounter">500</span><img class='miniCookie' src="img/cookie.png" />
-                <p class="bonusText">( + 3 ciastek na sekundę)</p>
-            </div>
-            <div class="bakeryBonus">Piekarnia - <span class="bakeryCounter">2000</span><img class='miniCookie' src="img/cookie.png" />
-                <p class="bonusText">( + 6 ciastek na sekundę)</p>
-            </div>
-            <div class="mineBonus">Kopalnia - <span class="mineCounter">100 000</span><img class='miniCookie' src="img/cookie.png" />
-                <p class="bonusText">( + 15 ciastek na sekundę)</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
+        <div class="myGithub"><a href="https://github.com/voytazz/Clicker-Skygate" target="_blank"><img src="img/github.png" /></a></div>
+    </header>
 
     <script src="js/script.js"></script>
 </body>
