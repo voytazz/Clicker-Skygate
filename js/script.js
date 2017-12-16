@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.time = time;
         this.bonusCount = function () {
             var myInterval = setInterval(function () {
-                cookieCounter.innerHTML = counter += bonus;
+                cookieCounter.innerHTML = (counter += bonus).toFixed(2);
                 cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
             }, time);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cookie.addEventListener("click", function () {
         counter++;
-        cookieCounter.innerHTML = counter;
+        cookieCounter.innerHTML = counter.toFixed(2);
         cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
     })
@@ -86,19 +86,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var counter = (localStorage.getItem("Counter") ? parseInt(localStorage.getItem("Counter")) : 0);
     cookieCounter.innerHTML = counter;
 
-    var cursorCost = (localStorage.getItem("cursorCost") ? parseInt(localStorage.getItem("cursorCost")) : 20);
+    var cursorCost = (localStorage.getItem("cursorCost") ? parseInt(localStorage.getItem("cursorCost")) : 15);
     cursorCounter.innerHTML = cursorCost;
 
     var grandmaCost = (localStorage.getItem("grandmaCost") ? parseInt(localStorage.getItem("grandmaCost")) : 100);
     grandmaCounter.innerHTML = grandmaCost;
 
-    var farmCost = (localStorage.getItem("farmCost") ? parseInt(localStorage.getItem("farmCost")) : 500);
+    var farmCost = (localStorage.getItem("farmCost") ? parseInt(localStorage.getItem("farmCost")) : 1100);
     farmCounter.innerHTML = farmCost;
 
-    var bakeryCost = (localStorage.getItem("bakeryCost") ? parseInt(localStorage.getItem("bakeryCost")) : 5000);
+    var bakeryCost = (localStorage.getItem("bakeryCost") ? parseInt(localStorage.getItem("bakeryCost")) : 12000);
     bakeryCounter.innerHTML = bakeryCost;
 
-    var mineCost = (localStorage.getItem("mineCost") ? parseInt(localStorage.getItem("mineCost")) : 100000);
+    var mineCost = (localStorage.getItem("mineCost") ? parseInt(localStorage.getItem("mineCost")) : 130000);
     mineCounter.innerHTML = mineCost;
 
     var ownedCursor = (localStorage.getItem("ownedCursor") ? parseInt(localStorage.getItem("ownedCursor")) : 0);
@@ -126,11 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.localStorage) {
 
             counter = 0;
-            cursorCost = 20;
+            cursorCost = 15;
             grandmaCost = 100;
-            farmCost = 500;
-            bakeryCost = 5000;
-            mineCost = 100000;
+            farmCost = 1100;
+            bakeryCost = 12000;
+            mineCost = 130000;
             ownedCursor = 0;
             ownedGrandma = 0;
             ownedFarm = 0;
@@ -139,11 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
             bonusCookiesCounter = 0;
 
             cookieCounter.innerHTML = 0;
-            cursorCounter.innerHTML = 20;
+            cursorCounter.innerHTML = 15;
             grandmaCounter.innerHTML = 100;
-            farmCounter.innerHTML = 500;
-            bakeryCounter.innerHTML = 5000;
-            mineCounter.innerHTML = 100000;
+            farmCounter.innerHTML = 1100;
+            bakeryCounter.innerHTML = 12000;
+            mineCounter.innerHTML = 130000;
             numberOfCursor.innerHTML = 0;
             numberOfGrandma.innerHTML = 0;
             numberOfFarm.innerHTML = 0;
@@ -198,9 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (counter >= cursorCost) {
             counter -= cursorCost;
-            cursorCost += 10;
+            cursorCost *= 1.15;
             bonusCookiesCounter += 1;
-            cursorCounter.innerHTML = cursorCost;
+            cursorCounter.innerHTML = cursorCost.toFixed(2);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedCursor += 1;
             numberOfCursor.innerHTML = ownedCursor;
@@ -216,9 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
     grandmaBonus.addEventListener("click", function () {
         if (counter >= grandmaCost) {
             counter -= grandmaCost;
-            grandmaCost += 50;
+            grandmaCost *= 1.15;
             bonusCookiesCounter += 2;
-            grandmaCounter.innerHTML = grandmaCost;
+            grandmaCounter.innerHTML = grandmaCost.toFixed(2);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedGrandma += 1;
             numberOfGrandma.innerHTML = ownedGrandma;
@@ -235,9 +235,9 @@ document.addEventListener("DOMContentLoaded", function () {
     farmBonus.addEventListener("click", function () {
         if (counter >= farmCost) {
             counter -= farmCost;
-            farmCost += 100;
+            farmCost *= 1.15;
             bonusCookiesCounter += 3;
-            farmCounter.innerHTML = farmCost;
+            farmCounter.innerHTML = farmCost.toFixed(2);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedFarm += 1;
             numberOfFarm.innerHTML = ownedFarm;
@@ -254,9 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
     bakeryBonus.addEventListener("click", function () {
         if (counter >= bakeryCost) {
             counter -= bakeryCost;
-            bakeryCost += 2000;
+            bakeryCost *= 1.15;
             bonusCookiesCounter += 6;
-            bakeryCounter.innerHTML = bakeryCost;
+            bakeryCounter.innerHTML = bakeryCost.toFixed(2);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedBakery += 1;
             numberOfBakery.innerHTML = ownedBakery;
@@ -273,9 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
     mineBonus.addEventListener("click", function () {
         if (counter >= mineCost) {
             counter -= mineCost;
-            mineCost += 5000;
+            mineCost *= 1.15;
             bonusCookiesCounter += 15;
-            mineCounter.innerHTML = mineCost;
+            mineCounter.innerHTML = mineCost.toFixed(2);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedMine += 1;
             numberOfMine.innerHTML = ownedMine;
