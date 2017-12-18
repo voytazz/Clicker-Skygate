@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.time = time;
         this.bonusCount = function () {
             var myInterval = setInterval(function () {
-                cookieCounter.innerHTML = (counter += bonus).toFixed(2);
+                cookieCounter.innerHTML = (counter += bonus).toFixed(0);
                 cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
             }, time);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cookie.addEventListener("click", function () {
         counter++;
-        cookieCounter.innerHTML = counter.toFixed(2);
+        cookieCounter.innerHTML = counter.toFixed(0);
         cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
     })
@@ -198,14 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (counter >= cursorCost) {
             counter -= cursorCost;
-            cursorCost *= 1.15;
-            bonusCookiesCounter += 1;
-            cursorCounter.innerHTML = cursorCost.toFixed(2);
+            cursorCost = Math.ceil(cursorCost * 1.15);
+            bonusCookiesCounter += 0.1;
+            cursorCounter.innerHTML = cursorCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedCursor += 1;
             numberOfCursor.innerHTML = ownedCursor;
 
-            var cursor = new Count(1, 1000);
+            var cursor = new Count(1, 10000);
             cursor.bonusCount();
 
         }
@@ -216,9 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
     grandmaBonus.addEventListener("click", function () {
         if (counter >= grandmaCost) {
             counter -= grandmaCost;
-            grandmaCost *= 1.15;
+            grandmaCost = Math.ceil(grandmaCost * 1.15);
             bonusCookiesCounter += 2;
-            grandmaCounter.innerHTML = grandmaCost.toFixed(2);
+            grandmaCounter.innerHTML = grandmaCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedGrandma += 1;
             numberOfGrandma.innerHTML = ownedGrandma;
@@ -235,9 +235,9 @@ document.addEventListener("DOMContentLoaded", function () {
     farmBonus.addEventListener("click", function () {
         if (counter >= farmCost) {
             counter -= farmCost;
-            farmCost *= 1.15;
+            farmCost = Math.ceil(farmCost * 1.15);
             bonusCookiesCounter += 3;
-            farmCounter.innerHTML = farmCost.toFixed(2);
+            farmCounter.innerHTML = farmCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedFarm += 1;
             numberOfFarm.innerHTML = ownedFarm;
@@ -254,9 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
     bakeryBonus.addEventListener("click", function () {
         if (counter >= bakeryCost) {
             counter -= bakeryCost;
-            bakeryCost *= 1.15;
+            bakeryCost = Math.ceil(bakeryCost * 1.15);
             bonusCookiesCounter += 6;
-            bakeryCounter.innerHTML = bakeryCost.toFixed(2);
+            bakeryCounter.innerHTML = bakeryCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedBakery += 1;
             numberOfBakery.innerHTML = ownedBakery;
@@ -273,9 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
     mineBonus.addEventListener("click", function () {
         if (counter >= mineCost) {
             counter -= mineCost;
-            mineCost *= 1.15;
+            mineCost = Math.ceil(mineCost * 1.15);
             bonusCookiesCounter += 15;
-            mineCounter.innerHTML = mineCost.toFixed(2);
+            mineCounter.innerHTML = mineCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedMine += 1;
             numberOfMine.innerHTML = ownedMine;
