@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.time = time;
         this.bonusCount = function () {
             var myInterval = setInterval(function () {
-                cookieCounter.innerHTML = (counter += bonus).toFixed(0);
+                cookieCounter.innerHTML = (counter += bonus).toFixed(2);
                 cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
             }, time);
@@ -45,17 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // CONTINUE BONUS LOOP AFTER REFRESH //
 
-    for (var i = 0; i < localStorage.getItem("bonusCookiesCounter"); i++) {
+    for (var i = 0; i < (localStorage.getItem("bonusCookiesCounter") - (localStorage.getItem("ownedCursor") * 0.1)); i++) {
         var continueBonus = new Count(1, 1000);
         continueBonus.bonusCount();
     }
 
+    for (var j = 0; j < localStorage.getItem("ownedCursor"); j++) {
+        var continueCursor = new Count(0.1, 1000);
+        continueCursor.bonusCount();
+    }
 
     // COUNTER INCREMENT //
 
     cookie.addEventListener("click", function () {
         counter++;
-        cookieCounter.innerHTML = counter.toFixed(0);
+        cookieCounter.innerHTML = counter.toFixed(2);
         cookie.style.transform = "scale(1.0" + Math.floor(Math.random() * 9) + 1 + ")";
 
     })
@@ -65,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
 
         if (window.localStorage) {
-            localStorage.setItem("Counter", counter);
+            localStorage.setItem("Counter", counter.toFixed(2));
             localStorage.setItem("cursorCost", cursorCost);
             localStorage.setItem("grandmaCost", grandmaCost);
             localStorage.setItem("farmCost", farmCost);
@@ -83,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // GET ITEMS FROM LOCAL STORAGE //
 
-    var counter = (localStorage.getItem("Counter") ? parseInt(localStorage.getItem("Counter")) : 0);
+    var counter = (localStorage.getItem("Counter") ? parseFloat(localStorage.getItem("Counter")) : 0);
     cookieCounter.innerHTML = counter;
 
     var cursorCost = (localStorage.getItem("cursorCost") ? parseInt(localStorage.getItem("cursorCost")) : 15);
@@ -205,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ownedCursor += 1;
             numberOfCursor.innerHTML = ownedCursor;
 
-            var cursor = new Count(1, 10000);
+            var cursor = new Count(0.1, 1000);
             cursor.bonusCount();
 
         }
@@ -217,13 +221,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter >= grandmaCost) {
             counter -= grandmaCost;
             grandmaCost = Math.ceil(grandmaCost * 1.15);
-            bonusCookiesCounter += 2;
+            bonusCookiesCounter += 1;
             grandmaCounter.innerHTML = grandmaCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedGrandma += 1;
             numberOfGrandma.innerHTML = ownedGrandma;
 
-            var grandma = new Count(2, 1000);
+            var grandma = new Count(1, 1000);
             grandma.bonusCount();
 
         }
@@ -236,13 +240,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter >= farmCost) {
             counter -= farmCost;
             farmCost = Math.ceil(farmCost * 1.15);
-            bonusCookiesCounter += 3;
+            bonusCookiesCounter += 8;
             farmCounter.innerHTML = farmCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedFarm += 1;
             numberOfFarm.innerHTML = ownedFarm;
 
-            var farm = new Count(3, 1000);
+            var farm = new Count(8, 1000);
             farm.bonusCount();
 
         }
@@ -255,13 +259,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter >= bakeryCost) {
             counter -= bakeryCost;
             bakeryCost = Math.ceil(bakeryCost * 1.15);
-            bonusCookiesCounter += 6;
+            bonusCookiesCounter += 47;
             bakeryCounter.innerHTML = bakeryCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedBakery += 1;
             numberOfBakery.innerHTML = ownedBakery;
 
-            var bakery = new Count(6, 1000);
+            var bakery = new Count(47, 1000);
             bakery.bonusCount();
 
         }
@@ -274,13 +278,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter >= mineCost) {
             counter -= mineCost;
             mineCost = Math.ceil(mineCost * 1.15);
-            bonusCookiesCounter += 15;
+            bonusCookiesCounter += 260;
             mineCounter.innerHTML = mineCost.toFixed(0);
             cookiesOnSecond.innerHTML = bonusCookiesCounter.toFixed(2);
             ownedMine += 1;
             numberOfMine.innerHTML = ownedMine;
 
-            var mine = new Count(15, 1000);
+            var mine = new Count(260, 1000);
             mine.bonusCount();
 
         }
